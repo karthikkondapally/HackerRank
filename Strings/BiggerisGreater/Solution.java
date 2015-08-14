@@ -3,6 +3,7 @@ package Strings.BiggerisGreater;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
@@ -16,20 +17,23 @@ import java.util.TreeSet;
 	    	
 	    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	    	int T = Integer.parseInt(br.readLine());
-	    	while(T-->0){
-	    		String str=br.readLine();
-	       StringBuffer sb = new StringBuffer();
-	       int length= sb.length();
-           int i;
-	       for( i=0;i<length-1;i++)
-	       { if(str.charAt(i) == str.charAt(i+1))
-	    		   continue;
-	       else 
-	    	   break;
-	       }
-	       if(i==length-2)
-	    	   System.out.println();
-
+	    	while(T-->0)
+	    	{
+	    		StringBuffer sb = new StringBuffer();
+	    	String str=br.readLine();
+            char[] a = str.toCharArray();
+            Arrays.sort(a);
+            int j=str.length()-1;
+	    		 for(int i=0;i<str.length();i++){
+	    			 if(i==0&&str.charAt(i)>a[j])
+	    				 {
+	    				 sb.append(String.valueOf(a)).reverse();
+	    				 break;
+	    				 }
+	    		
+	    		 }
+	    		 
+	    		 System.out.println(sb.toString());
 	    }
 	    }
 	}

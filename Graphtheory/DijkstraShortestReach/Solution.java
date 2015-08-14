@@ -30,10 +30,21 @@ public class Solution {
 		    		str = br.readLine().split(" ");
 		    		int p=Integer.parseInt(str[0]);
 		    		int q=Integer.parseInt(str[1]);
-		    		graph[p][q]=graph[q][p]=Integer.parseInt(str[2]);
+		    		int w= Integer.parseInt(str[2]);
+		    		if(w<graph[p][q]||graph[p][q]==-1)
+		    		graph[p][q]=graph[q][p]=w;
 		    		
 		    	}
 		    	int s = Integer.parseInt(br.readLine());
+
+		    	
+		    	    for(int l=1;l<=11;l++)
+		 		   // for(int i=1;i<=N;i++)
+		 			   for(int j=1;j<=N;j++)
+		 				  for(int k=1;k<=N;k++)
+		 				   if(graph[s][k]!=-1&&graph[k][j]!=-1)
+		 				   if(graph[s][j]>graph[s][k]+graph[k][j]||graph[s][j]==-1)
+		 					   graph[s][j]=graph[s][k]+graph[k][j];
 
              
 		   for(int j=1;j<=N;j++)
